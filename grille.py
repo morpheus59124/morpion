@@ -20,6 +20,10 @@ def est_gagnant(grille):
     for i in range(3):
         if grille[0][i]==grille[1][i]==grille[2][i] and grille[0][i]!=" ":
             return True
+        if grille [0][0]== grille[1][1]==grille[2][2]!=" ":
+            return True
+        if grille [0][2]== grille[1][1]==grille[2][0]!=" ":
+            return True
 
 
 
@@ -29,7 +33,7 @@ def tour(grille, joueur):
     ligne=input("Entrez le numero de la ligne : ")
     colonne=input("Entrez le numero de la colonne : ")
     print("Vous avez joué la case ("+ligne+","+colonne+")")
-    while grille[int(ligne)][int(colonne)]!= " ":
+    while grille[int(ligne)][int(colonne)] != " ":
         affichage(grille)
         print("Cette case est deja jouée ! Saisissez une autre case svp !")
         ligne=input("Entrez le numero de la ligne : ")
