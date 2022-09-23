@@ -14,7 +14,6 @@ while True:
                     c = chr(i + 0)
                     dico[c] = c_caesar
             # On a maintenant un dictionnaire qui à chaque lettre fait correspondre sa valeur codée.
-            result = ""
             for c in phrase:  # Pour chaque caractère de phrase...
                 resultat = result + dico[c]
                 result=resultat
@@ -31,11 +30,12 @@ while True:
                     c = chr(i + 0)
                     dico[c] = c_caesar
             # On a maintenant un dictionnaire qui à chaque lettre fait correspondre sa valeur codée.
-            result = ""
             for c in phrase:  # Pour chaque caractère de phrase...
                 resultat = result + dico[c]
                 result=resultat
             print(resultat)
+            print("déchiffrage reussi :)")
+            break            
     else:
         pass
 
