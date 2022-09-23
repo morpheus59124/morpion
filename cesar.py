@@ -1,14 +1,14 @@
 while True:
     # On récupère les données.
-    demande= int(input("voulez vous crypter(1) ou decrypter(2) : "))
+    demande= int(input("voulez vous Chiffrer(1) ou Dechiffrer(2) ou Decrypter(3): "))
     result=""
     if demande==1:
             phrase = input("Ecrivez une phrase:")
             decalage = int(input("Valeur du décalage?"))  # Conversion direct en int!
             # On crée un dictionnaire {lettre_de_départ: lettre_encodée}.
             dico = {}
-            for i in range(255):  # Pour chaque nombre de 0 à 25
-                    i_caesar = (i + decalage) % 255  # Modulo 26, pour toujours avoir un résultat compris entre 0 et 25 inclus (modulo 26 = reste de la division euclidienne par 26).
+            for i in range(255):  # Pour chaque nombre de 0 à 255
+                    i_caesar = (i + decalage) % 255  # Modulo 255, pour toujours avoir un résultat compris entre 0 et 25 inclus (modulo 26 = reste de la division euclidienne par 26).
                     # On ajoute à ces nombre la "valeur" de la lettre a, et on les convertit en lettres!
                     c_caesar = chr(i_caesar + 0)
                     c = chr(i + 0)
@@ -23,8 +23,8 @@ while True:
             decalage = int(input("Valeur du décalage?"))  # Conversion direct en int!
             # On crée un dictionnaire {lettre_de_départ: lettre_encodée}.
             dico = {}
-            for i in range(255):  # Pour chaque nombre de 0 à 25
-                    i_caesar = (i - decalage) % 255 # Modulo 26, pour toujours avoir un résultat compris entre 0 et 25 inclus (modulo 26 = reste de la division euclidienne par 26).
+            for i in range(255):  # Pour chaque nombre de 0 à 255
+                    i_caesar = (i - decalage) % 255 # Modulo 255, pour toujours avoir un résultat compris entre 0 et 25 inclus (modulo 26 = reste de la division euclidienne par 26).
                     # On ajoute à ces nombre la "valeur" de la lettre a, et on les convertit en lettres!
                     c_caesar = chr(i_caesar + 0)
                     c = chr(i + 0)
@@ -35,7 +35,6 @@ while True:
                 result=resultat
             print(resultat)
             print("déchiffrage reussi :)")
-            break            
+            break        
     else:
         pass
-
