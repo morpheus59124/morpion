@@ -10,6 +10,11 @@ def freq(texte):
                 
         return d
 
+def dechiffrer(resultat,index2):
+        for lettre in resultat:
+                resultat+=chr(ord(lettre)-index2)
+        return resultat
+
 while True:
     # On récupère les données.
     demande= int(input("voulez vous Chiffrer(1) ou Dechiffrer(2) ou Decrypter(3): "))
@@ -64,18 +69,10 @@ while True:
         index=ord(L[0][0])     
         index2=index-32
         print(index2)
-        dico = {}
-        for i in range(255):  # Pour chaque nombre de 0 à 255
-                    i_caesar = (i - index2) % 255 # Modulo 255, pour toujours avoir un résultat compris entre 0 et 25 inclus (modulo 26 = reste de la division euclidienne par 26).
-                    # On ajoute à ces nombre la "valeur" de la lettre a, et on les convertit en lettres!
-                    c_caesar = chr(i_caesar + 0)
-                    c = chr(i + 0)
-                    dico[c] = c_caesar
-            # On a maintenant un dictionnaire qui à chaque lettre fait correspondre sa valeur codée.
-        for c in phrase:  # Pour chaque caractère de phrase...
-                resultat = result + dico[c]
-                result=resultat
-        print(resultat)
+        decalage = index2
+
+        dechiffrer()
+        print(resultat)        
         print("déchiffrage reussi :)")
         break        
                 
